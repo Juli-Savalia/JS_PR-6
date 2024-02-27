@@ -4,78 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-       
-        .container
-        {
-            background:linear-gradient(135DEG,#153677,#4e085f);
-            max-width: 100%;
-            min-height: 100vh;
-            margin: 0 auto;
-            padding: 100px 0;
-        }
-        .main{
-            background-color: white;
-            width: 550px;
-            margin: 0 auto;
-            padding: 50px;
-        }
-        .todo_header{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
-        .todo_header img{
-            padding-left: 10px;
-        }
-        .todo_body{
-              display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #edeef0;
-            border-radius: 30px;
-            padding-left: 20px;
-            margin-bottom: 25px;
-        }
-        .todo_body img{
-            background-color: white;
-            border-radius: 90%;
-            margin-left: -75px;
-            cursor: zoom-in;
-            height: 65px;
-            width: 78px;
-            padding: 8px;
-        }
-        .todo_body input{
-           flex : 1;
-            border: none;
-            outline: none;
-            border-radius: 30px;
-            background: transparent;
-            padding: 15px ;
-            font-size : 15px;
-        }
-        .add{
-            border: none;
-            outline: none;
-            padding: 15px 50px;
-            background: #ff5945;
-            color:white;
-            font-size: 16px;
-            border-radius: 40px;
-            cursor: pointer;
-        }
-        ul li{
-            font-size: 18px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -86,38 +15,18 @@
             </div>
     
             <div class="todo_body">
-                <input type="text" id="task-input" class="todo-input" placeholder="ADD YOUR TEXT">
+                <input type="text" id="task-input" class="todoinput" placeholder="ADD YOUR TEXT">
                 <button class="add" onclick="addTask()">Add Task</button>
             </div>
             <ul id="task-list" class="list-items">
-                <li>Task 1</li>
+                <!-- <li class="checked">Task 1</li>
                 <li>Task 2</li>
-                <li>Task 3</li>
+                <li>Task 3</li> -->
             </ul>
         </div>
     </div>
 
-        <script type="text/javascript" src="script.js">
-function addTask() {
-  const input = document.getElementById('task-input');
-  const list = document.getElementById('task-list');
-
-  if (!input.value.trim()) return;
-
-  const task = document.createElement('li');
-  task.textContent = input.value.trim();
-
-  const deleteButton = document.createElement('button');
-  deleteButton.textContent = 'Delete';
-  deleteButton.addEventListener('click', () => {
-    list.removeChild(task);
-  });
-
-  task.appendChild(deleteButton);
-  list.appendChild(task);
-
-  input.value = '';
-}
-        </script>
+    <script src="script.js"></script>
+        
 </body>
 </html>
